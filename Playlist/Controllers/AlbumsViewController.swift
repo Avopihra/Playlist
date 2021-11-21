@@ -78,7 +78,7 @@ class AlbumsViewController: UIViewController {
                     self?.albums = sortedAlbums
                     self?.tableView.reloadData()
                 } else {
-                    self?.alertCompleted(title: "Error", message: "Album not found. Enter full title")
+                    self?.alertOk(title: "Error", message: "Album not found. Enter full title")
                 }
                 
             } else {

@@ -145,7 +145,7 @@ class DetailAlbumViewController: UIViewController {
                 self?.collectionView.reloadData()
             } else {
                 print(error!.localizedDescription)
-                self?.alertCompleted(title: "Error", message: error!.localizedDescription)
+                self?.alertOk(title: "Error", message: error!.localizedDescription)
             }
         }
     }

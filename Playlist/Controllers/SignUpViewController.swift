@@ -127,11 +127,11 @@ class SignUpViewController: UIViewController {
     
     private var elementsStackView = UIStackView()
     private let datePicker = UIDatePicker()
-    
     let nameValidType: String.ValidTypes = .name
     let emailValidType: String.ValidTypes = .email
     let passwordValidType: String.ValidTypes = .password
         
+// MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -139,7 +139,6 @@ class SignUpViewController: UIViewController {
         setConstraints()
         setupDelegate()
         setupDatePicker()
-        
         registerKeyBoardNotification()
     }
     
@@ -147,6 +146,7 @@ class SignUpViewController: UIViewController {
         removeKeyboardNotification()
     }
     
+//MARK: - Setup SignUp view
     private func setupViews() {
         title = "SignUP"
         
@@ -172,7 +172,8 @@ class SignUpViewController: UIViewController {
         backgroundView.addSubview(loginLabel)
         backgroundView.addSubview(signUpButton)
     }
-    
+
+//MARK: - Delegate
     private func setupDelegate() {
         firstNameTextField.delegate = self
         secondNameTextField.delegate = self
@@ -180,8 +181,20 @@ class SignUpViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
-    
+
+//MARK: - Calendar
     private func setupDatePicker() {
+        let calendar = Calendar(identifier: .gregorian)
+        let currentDate = Date()
+        var components = DateComponents()
+        components.calendar = calendar
+        components.year = -19
+        components.month = 12
+        let maxDate = calendar.date(byAdding: components, to: currentDate)!
+        components.year = -100
+        let minDate = calendar.date(byAdding: components, to: currentDate)!
+        datePicker.minimumDate = minDate
+        datePicker.maximumDate = maxDate
         datePicker.datePickerMode = .date
         datePicker.backgroundColor = .white
         datePicker.layer.borderColor = UIColor.lightGray.cgColor
@@ -191,7 +204,7 @@ class SignUpViewController: UIViewController {
         datePicker.tintColor = .black
     }
     
-   
+//MARK: SignUp tapped
     @objc func signUpButtonTapped() {
         
         let firstNameText = firstNameTextField.text ?? ""
@@ -213,25 +226,30 @@ class SignUpViewController: UIViewController {
                                      email: emailText,
                                      password: passwordText,
                                      age: datePicker.date)
-            loginLabel.text = "Registration successful"
-            
+            alertOk(title: "Successful!",
+                    message: "Login with your username and password") {
+                self.dismiss(animated: true,
+                             completion: nil)
+            }
         } else {
-            
-            loginLabel.text = "Registration"
-            alertCompleted(title: "Error", message: "If you're 18+ y.o. fill in all the fields")
-
+            alertOk(title: "Sign up error", message: "Incorrect data entry")
         }
-
-        
     }
-    
-    private func setTextField(textField: UITextField, label: UILabel, validType: String.ValidTypes, validMessage: String, wrongMessage: String, string: String, range: NSRange) {
+//MARK: - Help text fields
+    private func setTextField(textField: UITextField,
+                              label: UILabel,
+                              validType: String.ValidTypes,
+                              validMessage: String,
+                              wrongMessage: String,
+                              string: String,
+                              range: NSRange) {
         
         let text = (textField.text ?? "") + string
         let result: String
         
-        if range.length == 1 { //попадаем сюда, когда удаляем символ
-            let end = text.index(text.startIndex, offsetBy: text.count - 1)
+        if range.length == 1 {
+            let end = text.index(text.startIndex,
+                                 offsetBy: text.count - 1)
             result = String(text[text.startIndex..<end])
         } else {
             result = text
@@ -241,17 +259,21 @@ class SignUpViewController: UIViewController {
         if result.isValid(validType: validType) {
             label.text = validMessage
             label.textColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-        }else {
+        } else {
             label.text = wrongMessage
             label.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-
         }
     }
-    
-    private func setPhoneNumberMask(textField: UITextField, mask: String, string: String, range: NSRange) -> String {
+
+//MARK: - Phone number mask
+    private func setPhoneNumberMask(textField: UITextField,
+                                    mask: String, string: String,
+                                    range: NSRange) -> String {
         let text = textField.text ?? ""
-        let phone = (text as NSString).replacingCharacters(in: range, with: string)
-        let number = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        let phone = (text as NSString).replacingCharacters(in: range,
+                                                           with: string)
+        let number = phone.replacingOccurrences(of: "[^0-9]", with: "",
+                                                options: .regularExpression)
         var result = ""
         var index = number.startIndex
         
@@ -275,20 +297,22 @@ class SignUpViewController: UIViewController {
         return result
     }
 
-    //MARK: - Age Valid
+    //MARK: - Age valid
     private func ageIsValid() -> Bool {
         let calendar = NSCalendar.current
         let dateNow = Date()
         let birthday = datePicker.date
         
-        let age = calendar.dateComponents([.year], from: birthday, to: dateNow)
+        let age = calendar.dateComponents([.year],
+                                          from: birthday,
+                                          to: dateNow)
         let ageYear = age.year
         guard let ageUser = ageYear else { return false }
         return (ageUser < 18 ? false : true)
     }
     
 }
-//MARK: - UITextField Delegate
+//MARK: - UITextField delegate
 extension SignUpViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -372,7 +396,7 @@ extension SignUpViewController {
 }
 
 
-//MARK: - SetConstraints
+//MARK: - Constraints
 
 extension SignUpViewController {
     

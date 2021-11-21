@@ -20,7 +20,7 @@
 		CE4F2ADD272BCEF100182BE4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F2ADC272BCEF100182BE4 /* StringExtension.swift */; };
 		CE4F2AE0272BE27400182BE4 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F2ADF272BE27400182BE4 /* UserDefaultsManager.swift */; };
 		CE4F2AE3272C0B6600182BE4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F2AE2272C0B6600182BE4 /* UserModel.swift */; };
-		CE4F2AE5272C12BC00182BE4 /* AlertComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F2AE4272C12BC00182BE4 /* AlertComplete.swift */; };
+		CE4F2AE5272C12BC00182BE4 /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F2AE4272C12BC00182BE4 /* AlertOk.swift */; };
 		CE4F2AE7272CE2F900182BE4 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F2AE6272CE2F900182BE4 /* AlbumModel.swift */; };
 		CE4F2AEA272CE43400182BE4 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F2AE9272CE43400182BE4 /* NetworkRequest.swift */; };
 		CE4F2AEC272CE7BB00182BE4 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F2AEB272CE7BB00182BE4 /* NetworkDataFetch.swift */; };
@@ -45,7 +45,7 @@
 		CE4F2ADC272BCEF100182BE4 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		CE4F2ADF272BE27400182BE4 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		CE4F2AE2272C0B6600182BE4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		CE4F2AE4272C12BC00182BE4 /* AlertComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertComplete.swift; sourceTree = "<group>"; };
+		CE4F2AE4272C12BC00182BE4 /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
 		CE4F2AE6272CE2F900182BE4 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		CE4F2AE9272CE43400182BE4 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		CE4F2AEB272CE7BB00182BE4 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 				CE4F2AE2272C0B6600182BE4 /* UserModel.swift */,
 				CE4F2AE6272CE2F900182BE4 /* AlbumModel.swift */,
 				CE4F2AED272D2BDD00182BE4 /* SongsModel.swift */,
-				CE4F2AE4272C12BC00182BE4 /* AlertComplete.swift */,
+				CE4F2AE4272C12BC00182BE4 /* AlertOk.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 				CE4F2AD9272ABB6300182BE4 /* UIViewController Extension.swift in Sources */,
 				CE4F2ACB272A6FD900182BE4 /* SignUpViewController.swift in Sources */,
 				CE4F2AB5272A677700182BE4 /* AuthViewController.swift in Sources */,
-				CE4F2AE5272C12BC00182BE4 /* AlertComplete.swift in Sources */,
+				CE4F2AE5272C12BC00182BE4 /* AlertOk.swift in Sources */,
 				CE4F2ADB272AC86800182BE4 /* AlbumsTableViewCell.swift in Sources */,
 				CE4F2AD7272A8A8600182BE4 /* UIStackView Extension.swift in Sources */,
 				CE4F2AEE272D2BDD00182BE4 /* SongsModel.swift in Sources */,
