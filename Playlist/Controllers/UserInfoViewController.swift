@@ -44,13 +44,6 @@ class UserInfoViewController: UIViewController {
         return label
     }()
     
-    private let passwordLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Password"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     private var stackView = UIStackView()
 
     override func viewDidLoad() {
@@ -68,8 +61,7 @@ class UserInfoViewController: UIViewController {
                                                    secondNameLabel,
                                                    ageLabel,
                                                    phoneLabel,
-                                                   emailLabel,
-                                                   passwordLabel],
+                                                   emailLabel],
                                 axis: .vertical,
                                 spacing: 10,
                                 distribution: .fillProportionally)
@@ -87,7 +79,6 @@ class UserInfoViewController: UIViewController {
         secondNameLabel.text = activeUser.secondName
         phoneLabel.text = activeUser.phone
         emailLabel.text = activeUser.email
-        passwordLabel.text = activeUser.password
         ageLabel.text = dateString
     }
     
@@ -100,7 +91,7 @@ extension UserInfoViewController {
         NSLayoutConstraint.activate([
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor , constant: -150)
         ])
     }
 }

@@ -86,15 +86,7 @@ class AlbumsViewController: UIViewController {
                 }
                 self?.albums = sortedAlbums
                 self?.tableView.reloadData()
-//                if albumModel.results.isEmpty {
-//                    self?.noAlbumsLabel?.isHidden = false
-//                    self?.albums = sortedAlbums
-//                    self?.tableView.reloadData()
-//                } else {
-//                    self?.noAlbumsLabel?.isHidden = true
-//                }
             } else {
-                self?.noAlbumsLabel?.isHidden = false
                 self?.alertOk(title: "Error",
                               message: "Album not found. Enter full title")
             }
@@ -118,11 +110,6 @@ extension AlbumsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let albumsCount = albums.count
-        if albumsCount > 0 {
-            noAlbumsLabel?.isHidden = true
-        } else {
-            noAlbumsLabel?.isHidden = false
-        }
         return albumsCount
     }
     
