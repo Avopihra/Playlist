@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3D21CF274CB1FA00A68621 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE3D21CE274CB1FA00A68621 /* .gitignore */; };
 		CE4F2AB1272A677700182BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F2AB0272A677700182BE4 /* AppDelegate.swift */; };
 		CE4F2AB5272A677700182BE4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F2AB4272A677700182BE4 /* AuthViewController.swift */; };
 		CE4F2ACB272A6FD900182BE4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F2ACA272A6FD900182BE4 /* SignUpViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE3D21CE274CB1FA00A68621 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CE4F2AAD272A677700182BE4 /* Playlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4F2AB0272A677700182BE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4F2AB4272A677700182BE4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE3D21CB274BE20700A68621 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE4F2B00272D4C3E00182BE4 /* Info.plist */,
+				CE3D21CE274CB1FA00A68621 /* .gitignore */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		CE4F2AA4272A677700182BE4 = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +94,6 @@
 		CE4F2AAF272A677700182BE4 /* Playlist */ = {
 			isa = PBXGroup;
 			children = (
-				CE4F2B00272D4C3E00182BE4 /* Info.plist */,
 				CE4F2AC6272A684500182BE4 /* Applications */,
 				CE4F2AC5272A683D00182BE4 /* Controllers */,
 				CE4F2AE1272C0B1D00182BE4 /* Models */,
@@ -91,6 +101,7 @@
 				CE4F2ADE272BE24F00182BE4 /* Services */,
 				CE4F2AC7272A6F3300182BE4 /* Extensions */,
 				CE4F2AC4272A679A00182BE4 /* Resources */,
+				CE3D21CB274BE20700A68621 /* Supporting Files */,
 			);
 			path = Playlist;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3D21CF274CB1FA00A68621 /* .gitignore in Resources */,
 				CE4F2B02272D4C8000182BE4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,7 +418,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y42CSS8U6;
-				INFOPLIST_FILE = "$(SRCROOT)/Playlist/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Playlist/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,7 +437,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y42CSS8U6;
-				INFOPLIST_FILE = "$(SRCROOT)/Playlist/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Playlist/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

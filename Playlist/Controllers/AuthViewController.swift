@@ -196,7 +196,7 @@ extension AuthViewController {
     }
 }
 
-//MARK: - SetConstraints
+//MARK: - Set constraints
 
 extension AuthViewController {
     
